@@ -2,6 +2,7 @@
 
 //initializing objects
 Chassis chassis;
+Tray tray;
 okapi::Controller controller;
 
 

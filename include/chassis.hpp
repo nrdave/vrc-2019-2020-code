@@ -1,6 +1,6 @@
 /**
- * The header file for the chassis class, containing the class 
- * prototypes
+ * The header file for the chassis class. This class is used for
+ * controlling the chassis
  */ 
 
 #pragma once

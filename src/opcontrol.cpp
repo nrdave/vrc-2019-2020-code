@@ -17,5 +17,6 @@ void opcontrol() {
 	
 	while (true) {
 		chassis.driver(controller);
+		tray.driver(controller);
 	}
 }

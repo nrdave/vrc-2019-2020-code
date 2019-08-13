@@ -1,5 +1,6 @@
 /**
- * 
+ * The implementation of the chassis class
+ * This file contains the code for the functions defined in chassis.hpp
  */ 
 
 
