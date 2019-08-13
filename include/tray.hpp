@@ -14,7 +14,6 @@ class Tray{
 
         bool extended;
 
-        bool pressed;
     
     public:
 
