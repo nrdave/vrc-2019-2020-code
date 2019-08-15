@@ -18,6 +18,7 @@ LV_IMG_DECLARE(laser_jude);
 void initialize() {
 
 	Chassis chassis = Chassis();
+	Tray tray = Tray();
 
 	/**
 	 * 
