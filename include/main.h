@@ -44,7 +44,7 @@
 
 #include "chassis.hpp"
 #include "tray.hpp"
-#include "gui.hpp"
+#include "nightgui.hpp"
 #include "library.hpp"
 
 /**
