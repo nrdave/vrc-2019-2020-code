@@ -14,3 +14,6 @@ extern Tray tray;
 
 // The okapi controller object, used to get controller input
 extern okapi::Controller controller;
+
+//The variable that holds the currently selected autonomous
+extern int autonIdentifier;
