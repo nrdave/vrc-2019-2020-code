@@ -3,7 +3,7 @@
 
 
 
-class nightGUI {
+class GUI {
     private: 
     /**
      * Declaring all the lvgl objects.
@@ -34,7 +34,7 @@ class nightGUI {
         lv_obj_t * debugBtnMatrix;
     public:
     //the constructor for a gui, called in initialize
-        nightGUI();
+        GUI();
     //updates the auton label displayed on the screen
         static void updateAutonDisplay();
     /* the function to get the pressed button in the auton selection map, then
