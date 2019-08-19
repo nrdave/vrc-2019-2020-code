@@ -14,20 +14,26 @@
 
 class Chassis {
     private:
-        /**
-        * the okapi chassis controller object, used for 
-        */
-        okapi::ChassisControllerIntegrated chassis;
+    /**
+     * Declaring the motors used in the base, along with the motor groups used to control
+     * them easier. I opted for these over the okapi ChassisController as the
+     * ChassisController doesn't offer the same low level control individual motor groups
+     * have, which I wanted for programming autonomous.
+     */ 
+        okapi::Motor leftBackMtr;
 
+        okapi::Motor leftFrontMtr;
+
+        okapi::Motor rightBackMtr;
+
+        okapi::Motor rightFrontMtr;
+
+        okapi::MotorGroup rightWheels;
+
+        okapi::MotorGroup leftWheels;
     public:
         /**
         * The constructor for the chassis class
-        * 
-        * 
-        * Right now I haven't planned any parameters, but in the future
-        * I may add a way to specify how many motors are on the base, but
-        * based on the way okapi's chassis controller factory works,
-        * this may or may not be difficult
         */
         Chassis();
         /**

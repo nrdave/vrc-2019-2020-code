@@ -19,7 +19,11 @@ GUI::GUI(){
     lv_btnm_set_map(autoBtnMatrix, autonMap);
     lv_btnm_set_action(autoBtnMatrix, autonSelect);
 
+    static const char * debugMap[] = {""};
 
+    debugBtnMatrix = lv_btnm_create(tabDebug, NULL);
+    lv_btnm_set_map(debugBtnMatrix, debugMap);
+    lv_btnm_set_action(debugBtnMatrix, debugSelect);
 }
 
 
