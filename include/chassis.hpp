@@ -35,8 +35,19 @@ class Chassis {
         * The function used to control the robot in opcontrol
         */ 
         void driver(okapi::Controller controller);
+        /**
+         * A function used in auton for turning to a specific angle
+         * This is just a slight simplification of the okapi chassis
+         * turnAngle function. Instead of specifying that the parameter
+         * is of type okapi::QAngle each time I call it, I only have to do 
+         * so in chassis.cpp 
+         */ 
 
         void turnAngle(okapi::QAngle angle);
-
+        /**
+         * Similar to turnAngle, this function acts as a simplifier
+         * to the okapi::moveDistanceAsync function, removing the need to 
+         * specify the parameter's type as okapi::QLength
+         */ 
         void moveDistance(okapi::QLength distance);
 };
