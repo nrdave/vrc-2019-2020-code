@@ -26,3 +26,7 @@ void Chassis::driver(okapi::Controller controller) {
 void Chassis::turnAngle(okapi::QAngle angle) {
     chassis.turnAngle(angle);
 }
+
+void Chassis::moveDistance(okapi::QLength distance){
+    chassis.moveDistanceAsync(distance);
+}

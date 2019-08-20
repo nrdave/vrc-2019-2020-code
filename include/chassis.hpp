@@ -38,5 +38,5 @@ class Chassis {
 
         void turnAngle(okapi::QAngle angle);
 
-
+        void moveDistance(okapi::QLength distance);
 };
