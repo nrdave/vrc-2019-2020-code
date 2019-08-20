@@ -8,11 +8,11 @@
 
 Chassis::Chassis(): chassis(okapi::ChassisControllerFactory::create(
     {CHASSIS_MOTORPORT_LF, -CHASSIS_MOTORPORT_LB},
-    {-CHASSIS_MOTORPORT_RF, CHASSIS_MOTORPORT_RB})){
+    {-CHASSIS_MOTORPORT_RF, CHASSIS_MOTORPORT_RB}, okapi::AbstractMotor::gearset::green)){
 
         auto chassis = okapi::ChassisControllerFactory::create(
             {CHASSIS_MOTORPORT_LF, -CHASSIS_MOTORPORT_LB}, 
-            {-CHASSIS_MOTORPORT_RF, CHASSIS_MOTORPORT_RB});
+            {-CHASSIS_MOTORPORT_RF, CHASSIS_MOTORPORT_RB}, okapi::AbstractMotor::gearset::green);
     }
 
 void Chassis::driver(okapi::Controller controller) {
@@ -21,4 +21,8 @@ void Chassis::driver(okapi::Controller controller) {
     left = controller.getAnalog(okapi::ControllerAnalog::leftY);
     right = controller.getAnalog(okapi::ControllerAnalog::rightY);
     chassis.tank(left, right, 0.05);
+}
+
+void Chassis::turnAngle(okapi::QAngle angle) {
+    chassis.turnAngle(angle);
 }

@@ -15,7 +15,8 @@
 class Chassis {
     private:
         /**
-        * the okapi chassis controller object, used for 
+        * the okapi chassis controller object, used for controlling the 
+        * robot in driver
         */
         okapi::ChassisControllerIntegrated chassis;
 
@@ -34,6 +35,8 @@ class Chassis {
         * The function used to control the robot in opcontrol
         */ 
         void driver(okapi::Controller controller);
+
+        void turnAngle(okapi::QAngle angle);
 
 
 };
