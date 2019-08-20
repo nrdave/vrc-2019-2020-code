@@ -22,4 +22,8 @@ class Tray{
 
         void driver(okapi::Controller controller);
 
+        void trayDown();
+
+        void trayUp();
+
 };

@@ -19,7 +19,7 @@ void Tray::driver(okapi::Controller controller){
 
         if(extended == false){
 
-        trayMotor.moveRelative(180,120);
+        trayDown();
 
         extended == true;
 
@@ -29,10 +29,19 @@ void Tray::driver(okapi::Controller controller){
 
         if(extended == true){
 
-        trayMotor.moveRelative(-180,120);
-
+        trayUp();
         extended == false;
 
         }
     }
+}
+
+void Tray::trayDown(){
+    
+    trayMotor.moveRelative(180,10);
+
+}
+
+void Tray::trayUp(){
+    trayMotor.moveRelative(180, 10);
 }
