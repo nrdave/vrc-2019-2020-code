@@ -10,18 +10,19 @@
 
 class Tray{
     private:
+    //The motor used to move the tray
         okapi::Motor trayMotor;
-
+    //A variable used to see if the tray is extended or not
         bool extended;
 
     
     public:
-
+    //The constructor for a tray object
         Tray();
 
-
+    //The function for controlling the tray in opcontrol
         void driver(okapi::Controller controller);
-
+    
         void trayDown();
 
         void trayUp();
