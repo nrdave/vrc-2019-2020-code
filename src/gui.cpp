@@ -26,7 +26,7 @@ GUI::GUI(){
     lv_btnm_set_action(debugBtnMatrix, debugSelect);
 
     autonLabel = lv_label_create(tabAuton, NULL);
-    lv_label_set_text(autonLabel, "no auton");
+    lv_label_set_text(autonLabel, "No Auton");
     lv_obj_align(autonLabel, NULL, LV_ALIGN_IN_TOP_RIGHT, 0,0);
 }
 

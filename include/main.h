@@ -46,6 +46,7 @@
 #include "tray.hpp"
 #include "gui.hpp"
 #include "library.hpp"
+#include "arm.hpp"
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do

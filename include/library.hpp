@@ -7,11 +7,11 @@
 #include "main.h"
 
 //Auton Identifiers
-#define AUTON_NONE 0;
-#define AUTON_REDFRONT 1;
-#define AUTON_BLUEFRONT 2;
-#define AUTON_REDBACK 3;
-#define AUTON_BLUEBACK 4;
+#define AUTON_NONE 0
+#define AUTON_REDFRONT 1
+#define AUTON_BLUEFRONT 2
+#define AUTON_REDBACK 3
+#define AUTON_BLUEBACK 4
 
 // The chassis object used to control chassis motors
 extern Chassis chassis;

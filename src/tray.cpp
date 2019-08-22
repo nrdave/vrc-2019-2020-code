@@ -15,7 +15,7 @@ Tray::Tray(): trayMotor(TRAY_MOTOR_PORT){
 };
 
 void Tray::driver(okapi::Controller controller){
-    if(controller.getDigital(okapi::ControllerDigital::R1)){
+    if(controller.getDigital(okapi::ControllerDigital::A)){
 
         if(extended == false){
 
