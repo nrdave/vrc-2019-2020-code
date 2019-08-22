@@ -9,7 +9,8 @@
 
 Tray::Tray(): trayMotor(TRAY_MOTOR_PORT){
     
-    okapi::Motor trayMotor(TRAY_MOTOR_PORT);
+    okapi::Motor trayMotor(TRAY_MOTOR_PORT, false, 
+    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
 
     extended = false;
 };
@@ -34,9 +35,9 @@ void Tray::driver(okapi::Controller controller){
 }
 
 void Tray::trayDown(){
-    trayMotor.moveRelative(180,10);
+    trayMotor.moveRelative(45,10);
 }
 
 void Tray::trayUp(){
-    trayMotor.moveRelative(180, 10);
+    trayMotor.moveRelative(45, 10);
 }
