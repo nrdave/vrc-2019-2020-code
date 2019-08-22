@@ -24,3 +24,6 @@ extern okapi::Controller controller;
 
 //The variable that holds the currently selected autonomous
 extern int autonIdentifier;
+
+//The gui object
+extern GUI gui;

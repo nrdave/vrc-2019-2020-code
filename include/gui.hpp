@@ -27,6 +27,8 @@ class GUI {
 
         lv_obj_t * autoBtnMatrix;
 
+        lv_obj_t * autonLabel;
+
         lv_obj_t * autoRunBtn;
 
         static const char * debugMap[];
