@@ -4,11 +4,11 @@
  */ 
 
 #pragma once
-#include "okapi/api.hpp";
+#include "okapi/api.hpp"
 
 //Motor Ports
-#define CHASSIS_MOTORPORT_L 1
-#define CHASSIS_MOTORPORT_R 2
+#define CHASSIS_MOTORPORT_L 20
+#define CHASSIS_MOTORPORT_R 10
 
 
 class Chassis {

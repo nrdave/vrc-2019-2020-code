@@ -12,5 +12,5 @@ class Arm{
 
         void driver(okapi::Controller controller);
 
-        void moveTo();
-}
+        void moveTo(int input);
+};

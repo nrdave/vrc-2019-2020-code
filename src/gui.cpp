@@ -1,6 +1,6 @@
 #include "main.h"
 
-lv_obj_t * autoDescription;
+lv_obj_t * autonLabel;
 
 GUI::GUI(){
     tabview = lv_tabview_create(lv_scr_act(), NULL);
@@ -32,11 +32,11 @@ GUI::GUI(){
 
 
 lv_res_t GUI::autonSelect(lv_obj_t * btmn, const char * txt){
-    if(txt == "RFRONT") {autonIdentifier = AUTON_REDFRONT}
-    else if(txt == "BFRONT") {autonIdentifier = AUTON_BLUEFRONT}
-    else if(txt == "RBACK") {autonIdentifier = AUTON_REDBACK}
-    else if(txt == "BBACK") {autonIdentifier = AUTON_BLUEBACK}
-    else{autonIdentifier = AUTON_NONE}
+    if(txt == "RFRONT") {autonIdentifier = AUTON_REDFRONT;}
+    else if(txt == "BFRONT") {autonIdentifier = AUTON_BLUEFRONT;}
+    else if(txt == "RBACK") {autonIdentifier = AUTON_REDBACK;}
+    else if(txt == "BBACK") {autonIdentifier = AUTON_BLUEBACK;}
+    else{autonIdentifier = AUTON_NONE;}
     updateAutonDisplay();
     return LV_RES_OK;
 }

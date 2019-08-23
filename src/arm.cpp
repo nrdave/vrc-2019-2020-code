@@ -1,13 +1,13 @@
 #include "main.h"
 
-Arm::Arm(armMotor(ARM_MOTOR_PORT)){
+Arm::Arm(): armMotor(ARM_MOTOR_PORT){
     okapi::Motor armMotor(ARM_MOTOR_PORT, false, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
 
 }
 
 void Arm::driver(okapi::Controller controller) {
-    if(armMotor.getPosition == 0){
+    if(armMotor.getPosition() == 0){
         armMotor.moveVelocity(0);
     }
     else{
@@ -21,12 +21,14 @@ void Arm::driver(okapi::Controller controller) {
     }
 }
 
-void Arm::moveTo(okapi::AbstractMotor::encoderUnits::degrees input){
+void Arm::moveTo(int input){
+
+    //constraining the value so that the arm doesnt go too far
     if(input > 180){
         input = 180;
     }
     else if(input < 0){
         input = 0;
     }
-    armMotor.moveAbsolute(input);
+    armMotor.moveAbsolute(input, 120);
 }
