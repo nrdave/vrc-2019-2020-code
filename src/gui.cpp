@@ -10,7 +10,7 @@ GUI::GUI(){
     tabAuton = lv_tabview_add_tab(tabview, "Auton Selection");
     tabDebug = lv_tabview_add_tab(tabview, "Debug Menu");
 
-    
+
 
     guiHeader = lv_label_create(lv_scr_act(), NULL);
     lv_label_set_text(guiHeader, "UI v0.1.0");
@@ -23,11 +23,11 @@ GUI::GUI(){
     lv_btnm_set_action(autoBtnMatrix, autonSelect);
 
     static const char * debugMap[] = {""};
-
+/*
     debugBtnMatrix = lv_btnm_create(tabDebug, NULL);
     lv_btnm_set_map(debugBtnMatrix, debugMap);
     lv_btnm_set_action(debugBtnMatrix, debugSelect);
-
+*/
     autonLabel = lv_label_create(tabAuton, NULL);
     lv_label_set_text(autonLabel, "No Auton");
     lv_obj_align(autonLabel, NULL, LV_ALIGN_IN_TOP_RIGHT, 0,0);

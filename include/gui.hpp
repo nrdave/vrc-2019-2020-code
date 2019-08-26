@@ -47,5 +47,5 @@ class GUI {
      * Like the autonSelect function, but instead for selecting which debug elements 
      * are opened
      */ 
-        static lv_res_t debugSelect(lv_obj_t * btmn, const char * txt);
+      //  static lv_res_t debugSelect(lv_obj_t * btmn, const char * txt);
 };
