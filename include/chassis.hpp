@@ -36,17 +36,14 @@ class Chassis {
         void driver(okapi::Controller controller);
         /**
          * A function used in auton for turning to a specific angle
-         * This is just a slight simplification of the okapi chassis
-         * turnAngle function. Instead of specifying that the parameter
-         * is of type okapi::QAngle each time I call it, I only have to do 
-         * so in chassis.cpp 
+         * This is just a passthrough of the okapi::turnAngle function,
+         * as the okapi chassis object is private to the chassis class
          */ 
 
         void turnAngle(okapi::QAngle angle);
         /**
-         * Similar to turnAngle, this function acts as a simplifier
-         * to the okapi::moveDistanceAsync function, removing the need to 
-         * specify the parameter's type as okapi::QLength
+         * Similar to turnAngle, this function acts as a passthrough to the
+         * okapi::moveDistanceAsyc.
          */ 
         void moveDistance(okapi::QLength distance);
 };
