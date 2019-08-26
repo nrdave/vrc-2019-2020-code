@@ -6,8 +6,11 @@ GUI::GUI(){
     tabview = lv_tabview_create(lv_scr_act(), NULL);
     lv_obj_align(tabview, NULL, LV_ALIGN_IN_TOP_MID, 0, 10);
 
+    tabMain = lv_tabview_add_tab(tabview, "Home");
     tabAuton = lv_tabview_add_tab(tabview, "Auton Selection");
     tabDebug = lv_tabview_add_tab(tabview, "Debug Menu");
+
+    
 
     guiHeader = lv_label_create(lv_scr_act(), NULL);
     lv_label_set_text(guiHeader, "UI v0.1.0");

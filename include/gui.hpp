@@ -17,6 +17,8 @@ class GUI {
 
         lv_obj_t * tabview;
 
+        lv_obj_t * tabMain;
+
         lv_obj_t * tabAuton;
 
         lv_obj_t * tabDebug;
