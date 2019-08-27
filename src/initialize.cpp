@@ -8,8 +8,6 @@ GUI gui;
 int autonIdentifier;
 
 
-//creating an lvgl image
-LV_IMG_DECLARE(laser_jude);
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -22,20 +20,7 @@ void initialize() {
 	Tray tray = Tray();
 	GUI gui = GUI();
 
-	/**
-	 * 
-	 * lvgl object declaration to get an object to appear on the v5 brain
-	 * 
-	 */ 
-	/**
-	lv_obj_t * scr = lv_obj_create(NULL, NULL);
-	lv_scr_load(scr);  
 
-	lv_obj_t * judeIMG = lv_img_create(lv_scr_act(), NULL);
-	lv_img_set_src(judeIMG, &laser_jude);
-
-	lv_obj_align(judeIMG, NULL,LV_ALIGN_IN_TOP_LEFT, 0,0);
-	*/
 }
 
 

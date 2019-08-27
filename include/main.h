@@ -41,7 +41,7 @@
  */
 #include "okapi/api.hpp"
 //#include "pros/api_legacy.h"
-
+#include "pros/apix.h"
 #include "chassis.hpp"
 #include "tray.hpp"
 #include "gui.hpp"
