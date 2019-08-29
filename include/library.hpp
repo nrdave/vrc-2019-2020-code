@@ -3,7 +3,7 @@
  * These could be put in main.h, but creating a separate file
  * keeps things better organized
  */ 
-
+#pragma once
 #include "main.h"
 
 //Auton Identifiers
