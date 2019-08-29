@@ -41,12 +41,12 @@
  */
 #include "okapi/api.hpp"
 //#include "pros/api_legacy.h"
-#include "pros/apix.h"
+#include "display/lvgl.h"
 #include "chassis.hpp"
 #include "tray.hpp"
-#include "gui.hpp"
 #include "library.hpp"
 #include "arm.hpp"
+#include "gui.hpp"
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
