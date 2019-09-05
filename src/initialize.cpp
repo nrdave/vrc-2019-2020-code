@@ -4,7 +4,7 @@
 Chassis chassis;
 Tray tray;
 okapi::Controller controller;
-GUI gui;
+//GUI gui;
 int autonIdentifier;
 
 
@@ -15,10 +15,11 @@ int autonIdentifier;
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-
+	lv_obj_t * test = lv_btn_create(lv_scr_act(), NULL);
+	lv_obj_align(test, NULL, LV_ALIGN_CENTER, 0, 0);
 	Chassis chassis = Chassis();
 	Tray tray = Tray();
-	GUI gui = GUI();
+	//GUI gui = GUI();
 
 }
 

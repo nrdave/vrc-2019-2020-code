@@ -41,7 +41,6 @@
  */
 #include "okapi/api.hpp"
 //#include "pros/api_legacy.h"
-#include "display/lvgl.h"
 #include "chassis.hpp"
 #include "gui.hpp"
 #include "tray.hpp"
