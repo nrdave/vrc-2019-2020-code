@@ -21,7 +21,7 @@ void Arm::driver(okapi::Controller controller) {
     }
 }
 
-void Arm::moveTo(int input){
+void Arm::moveTo(double input){
 
     //constraining the value so that the arm doesnt go too far
     if(input > 180){

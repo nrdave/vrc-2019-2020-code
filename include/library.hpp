@@ -26,4 +26,4 @@ extern okapi::Controller controller;
 extern int autonIdentifier;
 
 //The gui object
-//extern GUI gui;
+extern GUI gui;
