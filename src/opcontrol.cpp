@@ -20,5 +20,7 @@ void opcontrol() {
 		chassis.driver(controller);
 		
 		tray.driver(controller);
+		
+		pros::delay(20);
 	}
 }

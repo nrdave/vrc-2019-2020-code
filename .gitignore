@@ -1,2 +1,6 @@
 .vscode/settings.json
-bin
+bin/_pros_ld_timestamp.o
+bin/arm.cpp.o
+bin/monolith.bin
+bin/monolith.elf
+bin/opcontrol.cpp.o
