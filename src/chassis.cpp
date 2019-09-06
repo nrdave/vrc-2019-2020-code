@@ -18,7 +18,7 @@ void Chassis::driver(okapi::Controller controller) {
     double right;
     left = controller.getAnalog(okapi::ControllerAnalog::leftY);
     right = controller.getAnalog(okapi::ControllerAnalog::rightY);
-    chassis.tank(left, right, 0.05);
+    chassis.tank(left, -right, 0.05);
 }
 
 void Chassis::turnAngle(okapi::QAngle angle) {

@@ -5,6 +5,7 @@ Chassis chassis;
 Tray tray;
 okapi::Controller controller;
 GUI gui;
+Arm arm;
 int autonIdentifier;
 
 
@@ -18,6 +19,7 @@ void initialize() {
 	GUI gui = GUI();
 	Chassis chassis = Chassis();
 	Tray tray = Tray();
+	Arm arm = Arm();
 
 }
 

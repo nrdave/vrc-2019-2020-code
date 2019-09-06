@@ -2,7 +2,7 @@
 #include "okapi/api.hpp"
 
 
-#define ARM_MOTOR_PORT 8
+#define ARM_MOTOR_PORT 19
 class Arm{
     private:
         okapi::Motor armMotor;

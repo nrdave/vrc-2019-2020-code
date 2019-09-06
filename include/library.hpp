@@ -27,3 +27,6 @@ extern int autonIdentifier;
 
 //The gui object
 extern GUI gui;
+
+//The arm object
+extern Arm arm;

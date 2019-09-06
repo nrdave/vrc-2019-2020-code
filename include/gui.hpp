@@ -20,8 +20,12 @@ class GUI {
 
         lv_obj_t * autonReturn;
 
+        lv_obj_t * returnAutonLabel;    
+
         lv_obj_t * debugReturn;
         
     public:
         GUI();
+
+        lv_action_t changeScreen(lv_obj_t * scr);
 };
