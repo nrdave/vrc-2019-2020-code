@@ -18,11 +18,15 @@ class GUI {
 
         lv_obj_t * goToDebug;
 
+        lv_obj_t * debugBtnLabel;
+
         lv_obj_t * autonReturn;
 
         lv_obj_t * returnAutonLabel;    
 
         lv_obj_t * debugReturn;
+
+        lv_obj_t * returnDebugLabel;
         
     public:
         GUI();

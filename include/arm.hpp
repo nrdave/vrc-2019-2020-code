@@ -3,6 +3,7 @@
 
 
 #define ARM_MOTOR_PORT 19
+#define ARM_MOTOR_VELOCITY 20
 class Arm{
     private:
         okapi::Motor armMotor;

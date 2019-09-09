@@ -19,7 +19,7 @@ void opcontrol() {
 		arm.driver(controller);
 		chassis.driver(controller);
 		
-		tray.driver(controller);
+		//tray.driver(controller);
 		
 		pros::delay(20);
 	}
