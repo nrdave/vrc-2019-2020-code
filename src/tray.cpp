@@ -11,7 +11,7 @@ Tray::Tray(): trayMotor(TRAY_MOTOR_PORT){
     
     okapi::Motor trayMotor(TRAY_MOTOR_PORT, false, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
-
+    trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
     extended = false;
 };
 
@@ -39,5 +39,5 @@ void Tray::trayDown(){
 }
 
 void Tray::trayUp(){
-    trayMotor.moveRelative(45, 10);
+    trayMotor.moveRelative(-45, 10);
 }

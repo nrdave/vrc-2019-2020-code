@@ -1,9 +1,10 @@
 #pragma once
 #include "okapi/api.hpp"
 
-
+//The port of the arm motor
 #define ARM_MOTOR_PORT 19
-#define ARM_MOTOR_VELOCITY 20
+//the speed for the arm motor to run at in opcontrol
+#define ARM_MOTOR_SPEED 20
 class Arm{
     private:
         okapi::Motor armMotor;
@@ -14,4 +15,5 @@ class Arm{
         void driver(okapi::Controller controller);
 
         void moveTo(double input);
+        
 };

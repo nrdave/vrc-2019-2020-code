@@ -11,10 +11,10 @@ void Arm::driver(okapi::Controller controller) {
     //else{
 
         if(controller.getDigital(okapi::ControllerDigital::L1)){
-            armMotor.moveVelocity(ARM_MOTOR_VELOCITY);
+            armMotor.moveVelocity(ARM_MOTOR_SPEED);
         }
         else if(controller.getDigital(okapi::ControllerDigital::L2)){
-            armMotor.moveVelocity(-ARM_MOTOR_VELOCITY);
+            armMotor.moveVelocity(-ARM_MOTOR_SPEED);
         }
         else{
             armMotor.moveVelocity(0);
@@ -31,5 +31,5 @@ void Arm::moveTo(double input){
     else if(input < 0){
         input = 0;
     }
-    armMotor.moveAbsolute(input, 120);
+    armMotor.moveAbsolute(input, 50);
 }
