@@ -1,10 +1,16 @@
-.vscode/settings.json
-bin/_pros_ld_timestamp.o
-bin/arm.cpp.o
-bin/chassis.cpp.o
-bin/gui.cpp.o
-bin/initialize.cpp.o
-bin/monolith.bin
-bin/opcontrol.cpp.o
-bin/monolith.elf
-bin/tray.cpp.o
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+*.bin
+*.elf
+
+# PROS
+bin/
+.vscode/
+compile_commands.json
+temp.log
+temp.errors
+*.ini
+.d/
