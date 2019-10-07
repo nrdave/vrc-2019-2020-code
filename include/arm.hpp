@@ -4,7 +4,7 @@
 //The port of the arm motor
 #define ARM_MOTOR_PORT 19
 //the speed for the arm motor to run at in opcontrol
-#define ARM_MOTOR_SPEED 20
+#define ARM_MOTOR_SPEED 100
 class Arm{
     private:
         okapi::Motor armMotor;
