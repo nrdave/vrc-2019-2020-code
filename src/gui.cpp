@@ -7,7 +7,7 @@ GUI::GUI(){
 
     tabview = lv_tabview_create(scr, NULL);
     tabMain = lv_tabview_add_tab(tabview, "Home");
-    tabDebug = lv_tabview_add_tab(tabview, "Debug Menu");
+    //tabDebug = lv_tabview_add_tab(tabview, "Debug Menu");
     tabAuton = lv_tabview_add_tab(tabview, "Auton Menu");
 
     autonContainer = lv_cont_create(tabAuton, NULL);
@@ -16,5 +16,4 @@ GUI::GUI(){
     const char * autonMap[] = {"Red Front", "Red Back", "\n", "Blue Front", "Blue Back", ""};
     autonBtnMatrix = lv_btnm_create(autonContainer, NULL);
     lv_btnm_set_map(autonBtnMatrix, autonMap);
-
 }
