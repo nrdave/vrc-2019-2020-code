@@ -45,6 +45,7 @@
 #include "gui.hpp"
 #include "tray.hpp"
 #include "arm.hpp"
+#include "intake.hpp"
 #include "library.hpp"
 
 /**

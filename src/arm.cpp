@@ -1,9 +1,15 @@
 #include "main.h"
 
-Arm::Arm(): armMotor(ARM_MOTOR_PORT){
-    okapi::Motor armMotor(ARM_MOTOR_PORT, false, 
+Arm::Arm(): leftArmMotor(ARM_LMOTOR_PORT), rightArmMotor(ARM_RMOTOR_PORT){
+    okapi::Motor leftArmMotor(ARM_LMOTOR_PORT, false, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
-    armMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+
+    leftArmMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);    
+
+    okapi::Motor rightArmMotor(ARM_RMOTOR_PORT, true, 
+    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
+    
+    rightArmMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
 }
 
 void Arm::driver(okapi::Controller controller) {
@@ -11,13 +17,16 @@ void Arm::driver(okapi::Controller controller) {
     //else{
 
         if(controller.getDigital(okapi::ControllerDigital::L1)){
-            armMotor.moveVelocity(ARM_MOTOR_SPEED);
+            leftArmMotor.moveVelocity(ARM_MOTOR_SPEED);
+            rightArmMotor.moveVelocity(ARM_MOTOR_SPEED);
         }
         else if(controller.getDigital(okapi::ControllerDigital::L2)){
-            armMotor.moveVelocity(-ARM_MOTOR_SPEED);
+            leftArmMotor.moveVelocity(-ARM_MOTOR_SPEED);
+            rightArmMotor.moveVelocity(-ARM_MOTOR_SPEED);
         }
         else{
-            armMotor.moveVelocity(0);
+            leftArmMotor.moveVelocity(0);
+            rightArmMotor.moveVelocity(0);
         }
    // }
 }
@@ -31,5 +40,6 @@ void Arm::moveTo(double input){
     else if(input < 0){
         input = 0;
     }
-    armMotor.moveAbsolute(input, 50);
+    leftArmMotor.moveAbsolute(input, 50);
+    rightArmMotor.moveAbsolute(input, 50);
 }

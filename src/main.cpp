@@ -6,6 +6,7 @@ Tray tray;
 okapi::Controller controller;
 GUI gui;
 Arm arm;
+Intake intake;
 int autonIdentifier;
 
 
@@ -20,7 +21,7 @@ void initialize() {
 	Chassis chassis = Chassis();
 	Tray tray = Tray();
 	Arm arm = Arm();
-
+	Intake intake = Intake();
 }
 
 /**
@@ -73,7 +74,7 @@ void opcontrol() {
 		arm.driver(controller);
 		chassis.driver(controller);
 		tray.driver(controller);
-		
+		intake.driver(controller);
 		pros::delay(20);
 	}
 }
