@@ -22,9 +22,9 @@ class Tray{
 
     //The function for controlling the tray in opcontrol
         void driver(okapi::Controller controller);
-    
+    //A function that runs motor commands to put the tray in the position to release cubes
         void trayDown();
-
+    //A function to run motor commands to pull the tray to its default, collecting position.
         void trayUp();
 
 };

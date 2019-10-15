@@ -7,7 +7,7 @@ okapi::Controller controller;
 GUI gui;
 Arm arm;
 Intake intake;
-int autonIdentifier;
+int autonID;
 
 
 /**
