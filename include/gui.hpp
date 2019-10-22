@@ -29,7 +29,8 @@ class GUI {
 
         lv_obj_t * autonContainer;
 
-        const char * autonMap[];
+        static const char * autonMap[];
+    
 
         //const char * debugMap[];
     public:
@@ -37,5 +38,7 @@ class GUI {
     //The constructor for the GUI
         GUI();
 
-        
+        static lv_res_t updateAutonID(lv_obj_t * btnm, const char * text);
+
+        static void updateAutonDisplay();
 };
