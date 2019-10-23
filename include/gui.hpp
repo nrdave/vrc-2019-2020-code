@@ -27,8 +27,6 @@ class GUI {
 
         //lv_obj_t * debugBtnMatrix;
 
-        lv_obj_t * autonContainer;
-
         static const char * autonMap[];
     
 
