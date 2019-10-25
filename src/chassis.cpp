@@ -7,10 +7,12 @@
 #include "main.h"
 
 Chassis::Chassis(): chassis(okapi::ChassisControllerFactory::create(
-    CHASSIS_MOTORPORT_L, CHASSIS_MOTORPORT_R, okapi::AbstractMotor::gearset::green)){
+    CHASSIS_MOTORPORT_L, CHASSIS_MOTORPORT_R, okapi::AbstractMotor::gearset::green, {4_in, 17_in})){
 
         auto chassis = okapi::ChassisControllerFactory::create(
-            CHASSIS_MOTORPORT_L, CHASSIS_MOTORPORT_R, okapi::AbstractMotor::gearset::green);
+            CHASSIS_MOTORPORT_L, CHASSIS_MOTORPORT_R, 
+            okapi::AbstractMotor::gearset::green,
+            {4_in, 17_in});
     }
 
 void Chassis::driver(okapi::Controller controller) {

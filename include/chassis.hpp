@@ -10,7 +10,6 @@
 #define CHASSIS_MOTORPORT_L 20
 #define CHASSIS_MOTORPORT_R 10
 
-
 class Chassis {
     private:
         /**
