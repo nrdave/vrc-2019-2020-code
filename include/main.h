@@ -40,7 +40,6 @@
  * Including the Okapi unit literals so I can use real
  * units in my functions rather than VEX-defined ones
  */ 
-using namespace okapi::literals;
 
 /**
  * You should add more #includes here
@@ -53,6 +52,9 @@ using namespace okapi::literals;
 #include "arm.hpp"
 #include "intake.hpp"
 #include "library.hpp"
+
+using namespace okapi::literals;
+
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do

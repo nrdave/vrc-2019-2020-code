@@ -21,4 +21,6 @@ class Intake{
         void rollIn();
     //Similar to rollIN, this function abstracts the pushing out of a cube
         void rollOut();
+    //Function to stop the rollers, useful in autonomous
+        void stop();
 };
