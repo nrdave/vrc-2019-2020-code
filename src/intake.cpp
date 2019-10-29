@@ -15,9 +15,8 @@ void Intake::driver(okapi::Controller controller){
         rollOut();
     }
     else{
-        rightIntakeMotor.moveVelocity(0);
-        leftIntakeMotor.moveVelocity(0);
-    }
+        stop();
+    }  
 }
 
 void Intake::rollIn(){
