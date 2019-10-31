@@ -1,12 +1,12 @@
 #include "main.h"
 
 Arm::Arm(): leftArmMotor(ARM_LMOTOR_PORT), rightArmMotor(ARM_RMOTOR_PORT){
-    okapi::Motor leftArmMotor(ARM_LMOTOR_PORT, false, 
+    okapi::Motor leftArmMotor(ARM_LMOTOR_PORT, true, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
 
     leftArmMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);    
 
-    okapi::Motor rightArmMotor(ARM_RMOTOR_PORT, true, 
+    okapi::Motor rightArmMotor(ARM_RMOTOR_PORT, false, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
     
     rightArmMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
@@ -40,6 +40,6 @@ void Arm::moveTo(double input){
     else if(input < 0){
         input = 0;
     }
-    leftArmMotor.moveAbsolute(input, 50);
-    rightArmMotor.moveAbsolute(input, 50);
+    leftArmMotor.moveAbsolute(input, 100);
+    rightArmMotor.moveAbsolute(input, 100);
 }

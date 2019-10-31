@@ -1,9 +1,9 @@
 #include "main.h"
 
 Intake::Intake(): leftIntakeMotor(INTAKE_LMOTOR_PORT), rightIntakeMotor(INTAKE_RMOTOR_PORT){
-    okapi::Motor leftIntakeMotor(INTAKE_LMOTOR_PORT, true,
+    okapi::Motor leftIntakeMotor(INTAKE_LMOTOR_PORT, false,
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
-    okapi::Motor rightIntakeMotor(INTAKE_RMOTOR_PORT, false, 
+    okapi::Motor rightIntakeMotor(INTAKE_RMOTOR_PORT, true, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);    
 }
 
@@ -20,13 +20,13 @@ void Intake::driver(okapi::Controller controller){
 }
 
 void Intake::rollIn(){
-    rightIntakeMotor.moveVelocity(INTAKE_VELOCITY);
-    leftIntakeMotor.moveVelocity(INTAKE_VELOCITY);
+    rightIntakeMotor.moveVelocity(INTAKE_SPEED);
+    leftIntakeMotor.moveVelocity(INTAKE_SPEED);
 }
 
 void Intake::rollOut(){
-    rightIntakeMotor.moveVelocity(-INTAKE_VELOCITY);
-    leftIntakeMotor.moveVelocity(-INTAKE_VELOCITY);
+    rightIntakeMotor.moveVelocity(-INTAKE_SPEED);
+    leftIntakeMotor.moveVelocity(-INTAKE_SPEED);
 }
 
 void Intake::stop(){

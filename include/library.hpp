@@ -9,5 +9,6 @@
 #define AUTON_BLUEFRONT 2
 #define AUTON_REDBACK 3
 #define AUTON_BLUEBACK 4
+#define AUTON_TEST 5
 
 extern int autonID;

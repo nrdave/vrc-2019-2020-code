@@ -12,7 +12,7 @@ Chassis::Chassis(): chassis(okapi::ChassisControllerFactory::create(
         auto chassis = okapi::ChassisControllerFactory::create(
             CHASSIS_MOTORPORT_L, CHASSIS_MOTORPORT_R, 
             okapi::AbstractMotor::gearset::green,
-            {4_in, 17_in});
+            {4_in, 13.25_in});
     }
 
 void Chassis::driver(okapi::Controller controller) {

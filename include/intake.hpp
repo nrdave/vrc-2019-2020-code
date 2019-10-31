@@ -3,7 +3,7 @@
 
 #define INTAKE_LMOTOR_PORT 18
 #define INTAKE_RMOTOR_PORT 8
-#define INTAKE_VELOCITY 200
+#define INTAKE_SPEED 200
 
 class Intake{
     private:
