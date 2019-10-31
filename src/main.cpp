@@ -53,7 +53,24 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
+	switch (autonID)
+    {
+    case AUTON_BLUEBACK:
+        break;
+    case AUTON_REDBACK:
+        break;    
+    case AUTON_BLUEFRONT:
+        break;    
+    case AUTON_REDFRONT:
+        break;    
+    case AUTON_TEST:
+		chassis.moveDistance(10_in);
+        break;     
+    case AUTON_NONE:
+        break;
+	}
+}
 
 /**
  * Runs the operator control code. This function will be started in its own task
