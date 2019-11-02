@@ -16,6 +16,9 @@ Tray::Tray(): trayMotor(TRAY_MOTOR_PORT){
 };
 
 void Tray::driver(okapi::Controller controller){
+    if(controller.getDigital(okapi::ControllerDigital::Y)){
+        trayMotor.moveAbsolute(0,100);
+    }
     if(controller.getDigital(okapi::ControllerDigital::A)){
         trayDown();
     }    

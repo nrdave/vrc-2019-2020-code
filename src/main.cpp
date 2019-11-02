@@ -67,6 +67,8 @@ void autonomous() {
         break;    
     case AUTON_TEST:
 		chassis.moveDistance(10_in);
+		pros::delay(200);
+		chassis.moveDistance(-10_in);
         break;     
     case AUTON_NONE:
         break;
