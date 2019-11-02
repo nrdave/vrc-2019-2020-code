@@ -54,6 +54,7 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
+	arm.moveTo(15);
 	switch (autonID)
     {
     case AUTON_BLUEBACK:

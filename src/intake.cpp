@@ -8,10 +8,10 @@ Intake::Intake(): leftIntakeMotor(INTAKE_LMOTOR_PORT), rightIntakeMotor(INTAKE_R
 }
 
 void Intake::driver(okapi::Controller controller){
-    if(controller.getDigital(okapi::ControllerDigital::up)){
+    if(controller.getDigital(okapi::ControllerDigital::R1)){
         rollIn();
     }
-    else if(controller.getDigital(okapi::ControllerDigital::down)){
+    else if(controller.getDigital(okapi::ControllerDigital::R2)){
         rollOut();
     }
     else{
