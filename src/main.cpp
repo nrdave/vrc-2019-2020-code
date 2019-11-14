@@ -66,10 +66,12 @@ void autonomous() {
     case AUTON_REDFRONT:
         break;    
     case AUTON_TEST:
-		chassis.moveDistance(10_in);
-		pros::delay(200);
-		chassis.moveDistance(-10_in);
+
         break;     
+	case AUTON_SIMPLE:
+		chassis.moveDistance(10_in, 150);
+		pros::delay(3000);
+		chassis.moveDistance(-10_in, 150);
     case AUTON_NONE:
         break;
 	}

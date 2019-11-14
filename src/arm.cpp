@@ -14,7 +14,6 @@ Arm::Arm(): leftArmMotor(ARM_LMOTOR_PORT), rightArmMotor(ARM_RMOTOR_PORT){
 
 void Arm::driver(okapi::Controller controller) {
 
-    //else{
         if(controller.getDigital(okapi::ControllerDigital::X)) {
             leftArmMotor.moveAbsolute(15,100);
             rightArmMotor.moveAbsolute(15,100);            
@@ -31,7 +30,6 @@ void Arm::driver(okapi::Controller controller) {
             leftArmMotor.moveVelocity(0);
             rightArmMotor.moveVelocity(0);
         }
-   // }
 }
 
 void Arm::moveTo(double input){
@@ -44,5 +42,5 @@ void Arm::moveTo(double input){
         input = 0;
     }
     leftArmMotor.moveAbsolute(input, 100);
-    rightArmMotor.moveAbsolute(input, 100);
+    //rightArmMotor.moveAbsolute(input, 100);
 }
