@@ -18,13 +18,15 @@ Chassis::Chassis(): chassis(okapi::ChassisControllerFactory::create(
 void Chassis::driver(okapi::Controller controller) {
     double left = controller.getAnalog(okapi::ControllerAnalog::leftY);
     double right = controller.getAnalog(okapi::ControllerAnalog::rightY);
-    chassis.tank(left, right, 0.05);
+    chassis.tank(.8 * left, .8 * right, 0.05);
 }
 
 void Chassis::turnAngle(okapi::QAngle angle) {
     chassis.turnAngle(angle);
 }
 
-void Chassis::moveDistance(okapi::QLength distance){
+void Chassis::moveDistance(okapi::QLength distance, double velocity){
+    chassis.setMaxVelocity(velocity);
     chassis.moveDistanceAsync(distance);
+    chassis.setMaxVelocity(200);
 }

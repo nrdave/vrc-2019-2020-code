@@ -44,5 +44,5 @@ class Chassis {
          * Similar to turnAngle, this function acts as a passthrough to the
          * okapi::moveDistanceAsyc.
          */ 
-        void moveDistance(okapi::QLength distance);
+        void moveDistance(okapi::QLength distance, double velocity);
 };
