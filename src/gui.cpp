@@ -18,8 +18,8 @@ GUI::GUI(){
     autonBtnMatrix = lv_btnm_create(tabAuton, NULL);
     lv_btnm_set_map(autonBtnMatrix, autonMap);
     lv_btnm_set_action(autonBtnMatrix, updateAutonID);
-    lv_obj_align(autonBtnMatrix, NULL, LV_ALIGN_IN_TOP_MID, 50, 0);
-    lv_obj_set_size(autonBtnMatrix, 400, 150);
+    lv_obj_align(autonBtnMatrix, NULL, LV_ALIGN_IN_TOP_LEFT, 30, 20);
+    lv_obj_set_size(autonBtnMatrix, 300, 150);
 }
 
 lv_res_t GUI::updateAutonID(lv_obj_t * btnm, const char * txt){
@@ -55,6 +55,9 @@ void GUI::updateAutonDisplay(){
         break;     
     case AUTON_NONE:
         lv_label_set_text(autonLabel, "No Auton");
+        break;      
+    case AUTON_SIMPLE:
+        lv_label_set_text(autonLabel, "1 point");
         break;  
     default:
         lv_label_set_text(autonLabel, "No Auton");
