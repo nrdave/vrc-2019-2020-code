@@ -42,5 +42,5 @@ void Arm::moveTo(double input){
         input = 0;
     }
     leftArmMotor.moveAbsolute(input, 100);
-    //rightArmMotor.moveAbsolute(input, 100);
+    rightArmMotor.moveAbsolute(input, 100);
 }
