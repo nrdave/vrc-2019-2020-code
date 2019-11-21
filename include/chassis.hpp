@@ -41,8 +41,12 @@ class Chassis {
 
         void turnAngle(okapi::QAngle angle);
         /**
-         * Similar to turnAngle, this function acts as a passthrough to the
-         * okapi::moveDistanceAsyc.
+         * This function is, as it name says, a function for making the robot move a specific distance
+         * in autonomous. Unlike turnAngle, this function is more than a passthrough for the
+         * okapiLib function of the same name. 
+         * The first parameter, distance, is what you might think. The 
+         * distance to travel (Using okapiLib's unit literals, I can enter a real distance, such as 10 inches)
+         * The second parameter, velocity, determines the maximum velocity the chassis can run at
          */ 
         void moveDistance(okapi::QLength distance, double velocity);
 };

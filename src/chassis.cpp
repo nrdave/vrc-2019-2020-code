@@ -27,6 +27,6 @@ void Chassis::turnAngle(okapi::QAngle angle) {
 
 void Chassis::moveDistance(okapi::QLength distance, double velocity){
     chassis.setMaxVelocity(velocity);
-    chassis.moveDistanceAsync(distance);
+    chassis.moveDistance(distance);
     chassis.setMaxVelocity(200);
 }
