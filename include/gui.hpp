@@ -13,15 +13,14 @@ class GUI {
      * Commented out objects are ones I don't have a use for right now, but may need
      * in the future.
      */ 
-        lv_obj_t * scr;
 
-        lv_obj_t * tabview;
+        lv_obj_t * goToAuton;
 
-        lv_obj_t * tabMain;
+        lv_obj_t * gtAutoLabel;
 
-        lv_obj_t * tabAuton;
+        lv_obj_t * returnAuton;
 
-        //lv_obj_t * tabDebug;
+        lv_obj_t * rAutoLabel;
 
         lv_obj_t * autonBtnMatrix;
 
@@ -39,4 +38,8 @@ class GUI {
         static lv_res_t updateAutonID(lv_obj_t * btnm, const char * text);
 
         static void updateAutonDisplay();
+
+        static lv_res_t goToAutonDisplay(lv_obj_t * btn);
+
+        static lv_res_t returnToMain(lv_obj_t * btn);
 };
