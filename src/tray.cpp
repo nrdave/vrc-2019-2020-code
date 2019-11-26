@@ -20,17 +20,21 @@ void Tray::driver(okapi::Controller controller){
         trayMotor.moveAbsolute(0,100);
     }
     if(controller.getDigital(okapi::ControllerDigital::A)){
+        if(extended == false)
         trayDown();
     }    
     if(controller.getDigital(okapi::ControllerDigital::B)){
+        if(extended == true)
         trayUp();
     }
 }
 
 void Tray::trayDown(){
-    trayMotor.moveRelative(-TRAY_MOTOR_ROTATION,100);
+    trayMotor.moveRelative(TRAY_MOTOR_ROTATION,100);
+    extended = true;
 }
 
 void Tray::trayUp(){
-    trayMotor.moveRelative(TRAY_MOTOR_ROTATION, 100);
+    trayMotor.moveRelative(-TRAY_MOTOR_ROTATION, 100);
+    extended = false;
 }

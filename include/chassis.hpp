@@ -7,8 +7,8 @@
 #include "okapi/api.hpp"
 
 //Motor Ports
-#define CHASSIS_MOTORPORT_L 20
-#define CHASSIS_MOTORPORT_R 10
+#define CHASSIS_MOTORPORT_L 11
+#define CHASSIS_MOTORPORT_R 20
 
 class Chassis {
     private:

@@ -1,8 +1,8 @@
 #pragma once
 #include "okapi/api.hpp"
 
-#define INTAKE_LMOTOR_PORT 18
-#define INTAKE_RMOTOR_PORT 8
+#define INTAKE_LMOTOR_PORT 2
+#define INTAKE_RMOTOR_PORT 9
 #define INTAKE_SPEED 200
 
 class Intake{
