@@ -12,7 +12,12 @@ class GUI {
      * 
      * Commented out objects are ones I don't have a use for right now, but may need
      * in the future.
+     * 
+     * Some object declarations are in gui.cpp. This is because they need to be
+     * accessed by multiple functions in the code, and I can't pass them in as
+     * parameters as they are LVGL button action functions (from what I can tell, at least).
      */ 
+        lv_obj_t * backgroundIMG;
 
         lv_obj_t * goToAuton;
 

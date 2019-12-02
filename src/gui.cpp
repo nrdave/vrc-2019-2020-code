@@ -4,10 +4,16 @@ lv_obj_t * scr;
 lv_obj_t * scrAuton;
 lv_obj_t * autonLabel;
 
+LV_IMG_DECLARE(background);
+
 GUI::GUI(){
     scr = lv_obj_create(NULL, NULL);
     scrAuton = lv_obj_create(NULL, NULL);
     lv_scr_load(scr);
+
+    backgroundIMG = lv_img_create(scr, NULL);
+    lv_img_set_src(backgroundIMG ,&background);
+    lv_obj_align(backgroundIMG, NULL, LV_ALIGN_IN_TOP_LEFT,0,0);
 
     goToAuton = lv_btn_create(scr, NULL);
     lv_btn_set_action(goToAuton, LV_BTN_ACTION_CLICK, goToAutonDisplay);
