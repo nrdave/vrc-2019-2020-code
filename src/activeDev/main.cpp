@@ -66,6 +66,23 @@ void autonomous() {
     case AUTON_REDFRONT:
         break;    
     case AUTON_TEST:
+		intake.rollIn();
+		pros::delay(200);
+		chassis.moveDistance(15_in, 150);
+		intake.rollOut();
+		pros::delay(1000);
+		chassis.moveDistance(-10_in, 75);
+		chassis.turnAngle(90_deg);
+		intake.rollIn();
+		chassis.moveDistance(12_in, 100);
+		pros::delay(200);
+		intake.stop();
+		chassis.turnAngle(-125_deg);
+		chassis.moveDistance(5_in, 100);
+		intake.rollOut();
+		pros::delay(400);
+		intake.stop();
+		chassis.moveDistance(-5_in, 100);
 
         break;     
 	case AUTON_SIMPLE:
