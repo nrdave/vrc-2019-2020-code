@@ -17,10 +17,11 @@ GUI::GUI(){
 
     goToAuton = lv_btn_create(scr, NULL);
     lv_btn_set_action(goToAuton, LV_BTN_ACTION_CLICK, goToAutonDisplay);
+    lv_obj_set_size(goToAuton, 100, 50);
     lv_obj_align(goToAuton, NULL, LV_ALIGN_IN_LEFT_MID, 20, 0);
 
     gtAutoLabel = lv_label_create(goToAuton, NULL);
-    lv_label_set_text(gtAutoLabel, "Auton Menu");
+    lv_label_set_text(gtAutoLabel, "Auton\nMenu");
     lv_obj_align(gtAutoLabel, NULL, LV_ALIGN_CENTER, 0 ,0);
 
     returnAuton = lv_btn_create(scrAuton, NULL);
