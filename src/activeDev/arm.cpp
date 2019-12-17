@@ -34,13 +34,7 @@ void Arm::driver(okapi::Controller controller) {
 
 void Arm::moveTo(double input){
 
-    //constraining the value so that the arm doesnt go too far
-    if(input > 180){
-        input = 180;
-    }
-    else if(input < 0){
-        input = 0;
-    }
+
     leftArmMotor.moveAbsolute(input, 100);
     rightArmMotor.moveAbsolute(input, 100);
 }

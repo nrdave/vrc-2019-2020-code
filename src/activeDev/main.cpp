@@ -58,31 +58,107 @@ void autonomous() {
 	switch (autonID)
     {
     case AUTON_BLUEBACK:
+		chassis.moveDistance(-5_in, 50);
+		arm.moveTo(350);
+		pros::delay(500);
+		arm.moveTo(0);
+		pros::delay(500);
+
+		intake.rollIn();
+		chassis.moveDistance(5_in, 100);
+		pros::delay(300);
+		intake.stop();
+
+		chassis.moveDistance(13_in, 100);
+		intake.rollOut();
+		pros::delay(500);
+		intake.stop();
+
+		chassis.moveDistance(-0.5_in, 75);
+		chassis.turnAngle(-90_deg);
+		intake.rollIn();
+		chassis.moveDistance(12_in, 100);
+		pros::delay(50);
+		intake.stop();
+
+		chassis.turnAngle(125_deg);
+		chassis.moveDistance(5_in, 100);
+		intake.rollOut();
+		pros::delay(1000);
+		chassis.moveDistance(5_in, 100);
+		intake.stop();
+		chassis.turnAngle(45_deg);
+		chassis.moveDistance(-10_in, 70);
         break;
     case AUTON_REDBACK:
+		chassis.moveDistance(-5_in, 50);
+		arm.moveTo(350);
+		pros::delay(500);
+		arm.moveTo(0);
+		pros::delay(500);
+
+		intake.rollIn();
+		chassis.moveDistance(5_in, 100);
+		pros::delay(300);
+		intake.stop();
+
+		chassis.moveDistance(13_in, 100);
+		intake.rollOut();
+		pros::delay(500);
+		intake.stop();
+
+		chassis.moveDistance(-0.5_in, 75);
+		chassis.turnAngle(90_deg);
+		intake.rollIn();
+		chassis.moveDistance(12_in, 100);
+		pros::delay(50);
+		intake.stop();
+
+		chassis.turnAngle(-125_deg);
+		chassis.moveDistance(5_in, 100);
+		intake.rollOut();
+		pros::delay(1000);
+		chassis.moveDistance(5_in, 100);
+		intake.stop();
+		chassis.turnAngle(-45_deg);
+		chassis.moveDistance(-10_in, 70);
         break;    
     case AUTON_BLUEFRONT:
         break;    
     case AUTON_REDFRONT:
         break;    
     case AUTON_TEST:
+		chassis.moveDistance(-5_in, 50);
+		arm.moveTo(350);
+		pros::delay(500);
+		arm.moveTo(0);
+		pros::delay(500);
+
 		intake.rollIn();
-		pros::delay(200);
-		chassis.moveDistance(15_in, 150);
+		chassis.moveDistance(5_in, 100);
+		pros::delay(300);
+		intake.stop();
+
+		chassis.moveDistance(13_in, 100);
 		intake.rollOut();
-		pros::delay(1000);
-		chassis.moveDistance(-10_in, 75);
+		pros::delay(500);
+		intake.stop();
+
+		chassis.moveDistance(-0.5_in, 75);
 		chassis.turnAngle(90_deg);
 		intake.rollIn();
 		chassis.moveDistance(12_in, 100);
-		pros::delay(200);
+		pros::delay(50);
 		intake.stop();
+
 		chassis.turnAngle(-125_deg);
 		chassis.moveDistance(5_in, 100);
 		intake.rollOut();
-		pros::delay(400);
+		pros::delay(1000);
+		chassis.moveDistance(5_in, 100);
 		intake.stop();
-		chassis.moveDistance(-5_in, 100);
+		chassis.turnAngle(-45_deg);
+		chassis.moveDistance(-10_in, 70);
 
         break;     
 	case AUTON_SIMPLE:

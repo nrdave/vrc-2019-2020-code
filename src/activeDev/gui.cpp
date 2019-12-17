@@ -35,7 +35,7 @@ GUI::GUI(){
     autonLabel = lv_label_create(scrAuton, NULL);
     lv_obj_align(autonLabel, NULL, LV_ALIGN_IN_TOP_LEFT, 10, 10);
 
-    static const char * autonMap[] = {"Red Front", "Red Back", "Test", "\n", "Blue Front", "Blue Back", "Basic", "\n", "None",""};
+    static const char * autonMap[] = {"Red Front", "Red PZ", "Test", "\n", "Blue Front", "Blue PZ", "Basic", "\n", "None",""};
     autonBtnMatrix = lv_btnm_create(scrAuton, NULL);
     lv_btnm_set_map(autonBtnMatrix, autonMap);
     lv_btnm_set_action(autonBtnMatrix, updateAutonID);
@@ -45,9 +45,9 @@ GUI::GUI(){
 
 lv_res_t GUI::updateAutonID(lv_obj_t * btnm, const char * txt){
     if(txt == "Red Front") autonID = AUTON_REDFRONT;
-    else if(txt == "Red Back") autonID = AUTON_REDBACK;
+    else if(txt == "Red PZ") autonID = AUTON_REDBACK;
     else if(txt == "Blue Front") autonID = AUTON_BLUEFRONT;
-    else if(txt == "Blue Back") autonID = AUTON_BLUEBACK;
+    else if(txt == "Blue PZ") autonID = AUTON_BLUEBACK;
     else if(txt == "Test") autonID = AUTON_TEST;
     else if(txt == "Basic") autonID = AUTON_SIMPLE;
     else if(txt == "None") autonID = AUTON_NONE;
@@ -60,10 +60,10 @@ void GUI::updateAutonDisplay(){
     switch (autonID)
     {
     case AUTON_BLUEBACK:
-        lv_label_set_text(autonLabel, "Blue Back");
+        lv_label_set_text(autonLabel, "Blue PZ");
         break;
     case AUTON_REDBACK:
-        lv_label_set_text(autonLabel, "Red Back");
+        lv_label_set_text(autonLabel, "Red PZ");
         break;    
     case AUTON_BLUEFRONT:
         lv_label_set_text(autonLabel, "Blue Front");
