@@ -59,7 +59,7 @@ void autonomous() {
     {
     case AUTON_BLUEBACK:
 		chassis.moveDistance(-5_in, 50);
-		arm.moveTo(350);
+		arm.moveTo(30);
 		pros::delay(500);
 		arm.moveTo(0);
 		pros::delay(500);

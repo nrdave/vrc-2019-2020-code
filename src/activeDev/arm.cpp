@@ -33,8 +33,11 @@ void Arm::driver(okapi::Controller controller) {
 }
 
 void Arm::moveTo(double input){
-
-
-    leftArmMotor.moveAbsolute(input, 100);
-    rightArmMotor.moveAbsolute(input, 100);
+    //converting degrees into motor encoder units
+    input *= 1/5;
+    //making sure the arm doesn't move more than 180 degrees
+    if(input < 180){
+        leftArmMotor.moveAbsolute(input, 100);
+        rightArmMotor.moveAbsolute(input, 100);
+    }
 }
