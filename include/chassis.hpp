@@ -7,8 +7,10 @@
 #include "okapi/api.hpp"
 
 //Motor Ports
-#define CHASSIS_MOTORPORT_L 11
-#define CHASSIS_MOTORPORT_R 20
+#define CHASSIS_MOTORPORT_LF 1
+#define CHASSIS_MOTORPORT_RF 10
+#define CHASSIS_MOTORPORT_LB 11
+#define CHASSIS_MOTORPORT_RB 20
 
 class Chassis {
     private:
@@ -17,6 +19,19 @@ class Chassis {
         * robot in driver
         */
         okapi::ChassisControllerIntegrated chassis;
+
+
+        /**
+         * okapi motor objects for each  motor, used in some 
+         * Chassis member functions
+         */ 
+        okapi::Motor rfMotor;
+
+        okapi::Motor rbMotor;
+
+        okapi::Motor lfMotor;
+
+        okapi::Motor lbMotor;
 
     public:
         /**
@@ -49,4 +64,11 @@ class Chassis {
          * The second parameter, velocity, determines the maximum velocity the chassis can run at
          */ 
         void moveDistance(okapi::QLength distance, double velocity);
+
+        /**
+         * 
+         * 
+         * 
+         */
+        void moveSide(char side, double arcLength); 
 };
