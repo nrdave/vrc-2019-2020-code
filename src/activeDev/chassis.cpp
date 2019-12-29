@@ -17,8 +17,8 @@ Chassis::Chassis(): chassis(okapi::ChassisControllerFactory::create(
     {
 
         auto chassis = okapi::ChassisControllerFactory::create(
-            {CHASSIS_MOTORPORT_LF, -CHASSIS_MOTORPORT_LB},
-            {-CHASSIS_MOTORPORT_RF, CHASSIS_MOTORPORT_RB},
+            {CHASSIS_MOTORPORT_LF, CHASSIS_MOTORPORT_LB},
+            {-CHASSIS_MOTORPORT_RF, -CHASSIS_MOTORPORT_RB},
             okapi::AbstractMotor::gearset::green, {4_in, 13.25_in});
 
         okapi::Motor rfMotor(CHASSIS_MOTORPORT_RF, true,
@@ -27,10 +27,10 @@ Chassis::Chassis(): chassis(okapi::ChassisControllerFactory::create(
         okapi::Motor lfMotor(CHASSIS_MOTORPORT_LF, false,            
         okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
 
-        okapi::Motor lbMotor(CHASSIS_MOTORPORT_LB, true,            
+        okapi::Motor lbMotor(CHASSIS_MOTORPORT_LB, false,            
         okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
 
-        okapi::Motor rbMotor(CHASSIS_MOTORPORT_RB, false,            
+        okapi::Motor rbMotor(CHASSIS_MOTORPORT_RB, true,            
         okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
     }
 
