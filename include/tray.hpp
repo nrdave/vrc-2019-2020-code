@@ -6,7 +6,7 @@
 #pragma once
 #include "okapi/api.hpp"
 
-#define TRAY_MOTOR_PORT 5
+#define TRAY_MOTOR_PORT 10
 #define TRAY_MOTOR_ROTATION 1100
 
 class Tray{

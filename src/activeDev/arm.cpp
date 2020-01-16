@@ -8,10 +8,11 @@ Arm::Arm(): armMotor(ARM_MOTOR_PORT){
 }
 
 void Arm::driver(okapi::Controller controller) {
+    if(controller.getDigital(okapi::ControllerDigital::X)) {
+        armMotor.moveAbsolute(15,100);
+    }
+    if(armMotor.getPosition() < 370){
 
-        if(controller.getDigital(okapi::ControllerDigital::X)) {
-            armMotor.moveAbsolute(15,100);
-        }
         if(controller.getDigital(okapi::ControllerDigital::L1)){
             armMotor.moveVelocity(ARM_MOTOR_SPEED);
         }
@@ -21,13 +22,14 @@ void Arm::driver(okapi::Controller controller) {
         else{
             armMotor.moveVelocity(0);
         }
+    }
 }
 
 void Arm::moveTo(double input){
-    //accounting for the arm gear ratio
-    input *= 5;
     //making sure the arm doesn't move more than 180 degrees
-    if(input < 180){
+    if(input < 370){
+        //Accounting for the arm gear ratio
+        input *= 5;
         armMotor.moveAbsolute(input, 100);
     }
 }

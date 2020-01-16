@@ -21,11 +21,17 @@ void Tray::driver(okapi::Controller controller){
     }
     if(controller.getDigital(okapi::ControllerDigital::A)){
         if(extended == false)
-        trayDown();
+        {
+            trayDown();
+            extended = true;
+        }
     }    
     if(controller.getDigital(okapi::ControllerDigital::B)){
         if(extended == true)
-        trayUp();
+        {
+            trayUp();
+            extended = false;
+        }
     }
 }
 

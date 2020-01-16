@@ -34,6 +34,8 @@ GUI::GUI(){
 
     autonLabel = lv_label_create(scrAuton, NULL);
     lv_obj_align(autonLabel, NULL, LV_ALIGN_IN_TOP_LEFT, 10, 10);
+    lv_label_set_text(autonLabel, "Auton");
+
 
     static const char * autonMap[] = {"Red Front", "Red PZ", "Test", "\n", "Blue Front", "Blue PZ", "Basic", "\n", "None",""};
     autonBtnMatrix = lv_btnm_create(scrAuton, NULL);
