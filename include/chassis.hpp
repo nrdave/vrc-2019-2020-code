@@ -7,8 +7,8 @@
 #include "okapi/api.hpp"
 
 //Motor Ports
-#define CHASSIS_MOTORPORT_LF 1
-#define CHASSIS_MOTORPORT_RF 10
+#define CHASSIS_MOTORPORT_LF 12
+#define CHASSIS_MOTORPORT_RF 19
 #define CHASSIS_MOTORPORT_LB 11
 #define CHASSIS_MOTORPORT_RB 20
 

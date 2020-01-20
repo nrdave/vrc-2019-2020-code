@@ -2,18 +2,15 @@
 #include "okapi/api.hpp"
 
 //The port of the arm motor
-#define ARM_LMOTOR_PORT 12
-#define ARM_RMOTOR_PORT 19
+#define ARM_MOTOR_PORT 1
 //the speed for the arm motor ttotototoo run at in opcontrol
 #define ARM_MOTOR_SPEED 100
 class Arm{
     private:
 
-    //Declarations for the motors on the arm
-        okapi::Motor leftArmMotor;
+    //Declarations for the motor on the arm
+        okapi::Motor armMotor;
         
-        okapi::Motor rightArmMotor;
-
     public:
     //The constructor for an arm object
         Arm();
