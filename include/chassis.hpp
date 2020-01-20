@@ -70,5 +70,5 @@ class Chassis {
          * 
          * 
          */
-        void moveSide(char side, double arcLength); 
+        void moveSide(char side, double rotation); 
 };

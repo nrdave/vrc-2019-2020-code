@@ -50,7 +50,7 @@ void Chassis::moveDistance(okapi::QLength distance, double velocity){
     chassis.setMaxVelocity(200);
 }
 
-void Chassis::moveSide(char side, double arcLength){
+void Chassis::moveSide(char side, double rotation){
     
     if(side == 'l'){
 
