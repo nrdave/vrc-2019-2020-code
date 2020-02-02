@@ -1,6 +1,11 @@
 #include "main.h"
 
-Intake::Intake(): leftIntakeMotor(INTAKE_LMOTOR_PORT), rightIntakeMotor(INTAKE_RMOTOR_PORT){
+Intake::Intake(): leftIntakeMotor(INTAKE_LMOTOR_PORT, false,
+    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees),
+    rightIntakeMotor(INTAKE_RMOTOR_PORT, true, 
+    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees)
+    {
+
     okapi::Motor leftIntakeMotor(INTAKE_LMOTOR_PORT, false,
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
     okapi::Motor rightIntakeMotor(INTAKE_RMOTOR_PORT, true, 

@@ -1,6 +1,7 @@
 #include "main.h"
 
-Arm::Arm(): armMotor(ARM_MOTOR_PORT){
+Arm::Arm(): armMotor(ARM_MOTOR_PORT, true, 
+    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees){
     okapi::Motor armMotor(ARM_MOTOR_PORT, true, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
 
@@ -11,8 +12,6 @@ void Arm::driver(okapi::Controller controller) {
     if(controller.getDigital(okapi::ControllerDigital::X)) {
         armMotor.moveAbsolute(15,100);
     }
-    if(armMotor.getPosition() < 370){
-
         if(controller.getDigital(okapi::ControllerDigital::L1)){
             armMotor.moveVelocity(ARM_MOTOR_SPEED);
         }
@@ -22,7 +21,7 @@ void Arm::driver(okapi::Controller controller) {
         else{
             armMotor.moveVelocity(0);
         }
-    }
+    
 }
 
 void Arm::moveTo(double input){

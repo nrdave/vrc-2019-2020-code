@@ -47,9 +47,9 @@ GUI::GUI(){
 
 lv_res_t GUI::updateAutonID(lv_obj_t * btnm, const char * txt){
     if(txt == "Red Front") autonID = AUTON_REDFRONT;
-    else if(txt == "Red PZ") autonID = AUTON_REDBACK;
+    else if(txt == "Red PZ") autonID = AUTON_REDPZ;
     else if(txt == "Blue Front") autonID = AUTON_BLUEFRONT;
-    else if(txt == "Blue PZ") autonID = AUTON_BLUEBACK;
+    else if(txt == "Blue PZ") autonID = AUTON_BLUEPZ;
     else if(txt == "Test") autonID = AUTON_TEST;
     else if(txt == "Basic") autonID = AUTON_SIMPLE;
     else if(txt == "None") autonID = AUTON_NONE;
@@ -61,10 +61,10 @@ lv_res_t GUI::updateAutonID(lv_obj_t * btnm, const char * txt){
 void GUI::updateAutonDisplay(){
     switch (autonID)
     {
-    case AUTON_BLUEBACK:
+    case AUTON_BLUEPZ:
         lv_label_set_text(autonLabel, "Blue PZ");
         break;
-    case AUTON_REDBACK:
+    case AUTON_REDPZ:
         lv_label_set_text(autonLabel, "Red PZ");
         break;    
     case AUTON_BLUEFRONT:

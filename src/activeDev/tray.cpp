@@ -7,7 +7,8 @@
 
 #include "main.h"
 
-Tray::Tray(): trayMotor(TRAY_MOTOR_PORT){
+Tray::Tray(): trayMotor(TRAY_MOTOR_PORT, true, 
+    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees){
     
     okapi::Motor trayMotor(TRAY_MOTOR_PORT, true, 
     okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
