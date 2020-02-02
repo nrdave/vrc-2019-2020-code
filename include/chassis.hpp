@@ -20,8 +20,6 @@ class Chassis {
         okapi::MotorGroup rightBase;
 
         okapi::MotorGroup leftBase;
-
-        static okapi::ChassisControllerIntegrated autonControl;
     public:
         /**
         * The constructor for the chassis class
@@ -43,11 +41,11 @@ class Chassis {
         void moveDistance(float leftTarg, float rightTarg);
 
         void turnAngle(float angle);
+        void setVelocity(int velo);
 
         /**
          * -=-=-=-  NOT IMPLEMENTED YET -=-=-=-
          * 
          * 
          */
-        void setVelocity(int velo);
 };
