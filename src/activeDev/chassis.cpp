@@ -35,37 +35,34 @@ Chassis::Chassis():rightBase({okapi::Motor(CHASSIS_MOTORPORT_RF,
     }
 
 void Chassis::driver(okapi::Controller controller) {
-    double left = controller.getAnalog(okapi::ControllerAnalog::leftY);
-    double right = controller.getAnalog(okapi::ControllerAnalog::rightY);
-    leftBase.controllerSet(left);
-    rightBase.controllerSet(right);
+    leftBase.controllerSet(controller.getAnalog(okapi::ControllerAnalog::leftY));
+    rightBase.controllerSet(controller.getAnalog(okapi::ControllerAnalog::rightY));
 }
 
 void Chassis::moveDistance(float leftTarg, float rightTarg){
-    //leftTarg *= 90;
-    //rightTarg *= 90;
+    leftTarg *= 90/3.1415926535;
+    rightTarg *= 90/3.1415926535;
     leftBase.tarePosition();
     rightBase.tarePosition();
     float leftError = leftTarg - leftBase.getPosition(); 
     float rightError = rightTarg - rightBase.getPosition(); 
     while(abs(leftError) > 20){
-        pros::delay(20);
         float leftOutput = leftError * 0.5;
         float rightOutput = rightError * 0.5;
-        leftBase.moveVelocity(leftOutput);
-        rightBase.moveVelocity(rightOutput);
-        float leftError = leftTarg - leftBase.getPosition(); 
-        float rightError = rightTarg - rightBase.getPosition(); 
+        setVelocity(leftOutput, rightOutput);
+        leftError = leftTarg - leftBase.getPosition(); 
+        rightError = rightTarg - rightBase.getPosition(); 
+        pros::delay(20);
     }
-    leftBase.moveVelocity(0);
-    rightBase.moveVelocity(0);
+    setVelocity(0,0);
 }
 
 void Chassis::turnAngle(float angle){
-    
+    double turnLength = 6.625 * angle;
+    moveDistance(turnLength, -turnLength);
 }
 
-void Chassis::setVelocity(int velo){
-    leftBase.moveVelocity(velo);
-    rightBase.moveVelocity(velo);
+void Chassis::setVelocity(int leftVelo, int rightVelo){
+    leftBase.moveVelocity(leftVelo);
+    rightBase.moveVelocity(rightVelo);
 }

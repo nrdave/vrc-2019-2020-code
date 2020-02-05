@@ -41,7 +41,7 @@ class Chassis {
         void moveDistance(float leftTarg, float rightTarg);
 
         void turnAngle(float angle);
-        void setVelocity(int velo);
+        void setVelocity(int leftVelo, int rightVelo);
 
         /**
          * -=-=-=-  NOT IMPLEMENTED YET -=-=-=-
