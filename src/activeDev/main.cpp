@@ -68,13 +68,15 @@ void autonomous() {
     case AUTON_REDFRONT:
         break;    
     case AUTON_TEST:
+	chassis.moveDistance(5,5);
+	chassis.turnAngle(90);
         break;     
 	case AUTON_SIMPLE:
-		chassis.setVelocity(100);
+		chassis.setVelocity(100, 100);
 		pros::delay(500);
-		chassis.setVelocity(-50);
+		chassis.setVelocity(-50,-50);
 		pros::delay(500);
-		chassis.setVelocity(0);
+		chassis.setVelocity(0,0);
 
     case AUTON_NONE:
         break;
