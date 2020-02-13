@@ -37,9 +37,13 @@ class Chassis {
         void driver(okapi::Controller controller);
 
         /**
+        * The function to move a specific distance, in inches, in autonomous
         */ 
         void moveDistance(float leftTarg, float rightTarg);
-
+        /**
+         * The chassis function used to turn the robot a specific angle, in degrees
+         * Positive values are clockwise, with negative ones being counterclockwise
+         */ 
         void turnAngle(float angle);
         void setVelocity(int leftVelo, int rightVelo);
 

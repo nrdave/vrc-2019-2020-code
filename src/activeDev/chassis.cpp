@@ -58,7 +58,7 @@ void Chassis::moveDistance(float leftTarg, float rightTarg){
 }
 
 void Chassis::turnAngle(float angle){
-    double turnLength = 6.625 * angle * (3.1415926535/180);
+    double turnLength = 6.65/3 * angle * (3.1415926535/180);
     moveDistance(turnLength, -turnLength);
 }
 

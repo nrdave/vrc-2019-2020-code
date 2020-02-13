@@ -54,9 +54,9 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	arm.moveTo(30);
-	pros::delay(100);
-	arm.moveTo(-30);
+	arm.moveTo(45);
+	pros::delay(500);
+	arm.moveTo(0);
 	switch (autonID)
     {
     case AUTON_BLUEPZ:
