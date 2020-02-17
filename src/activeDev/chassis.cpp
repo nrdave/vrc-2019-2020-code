@@ -39,7 +39,7 @@ void Chassis::driver(okapi::Controller controller) {
     rightBase.controllerSet(controller.getAnalog(okapi::ControllerAnalog::rightY));
 }
 
-void Chassis::moveDistance(float leftTarg, float rightTarg){
+void Chassis::moveDistance(float leftTarg, float rightTarg, int maxVelo){
     leftTarg *= 90;
     rightTarg *= 90;
     leftBase.tarePosition();
@@ -49,6 +49,10 @@ void Chassis::moveDistance(float leftTarg, float rightTarg){
     while(abs(leftError) > 20 && abs(rightError) > 20){
         float leftOutput = leftError * 0.5;
         float rightOutput = rightError * 0.5;
+        if(leftOutput > maxVelo)
+            leftOutput = maxVelo;        
+        if(rightOutput > maxVelo)
+            rightOutput = maxVelo;
         setVelocity(leftOutput, rightOutput);
         leftError = leftTarg - leftBase.getPosition(); 
         rightError = rightTarg - rightBase.getPosition(); 
@@ -59,7 +63,7 @@ void Chassis::moveDistance(float leftTarg, float rightTarg){
 
 void Chassis::turnAngle(float angle){
     double turnLength = 6.65/3 * angle * (3.1415926535/180);
-    moveDistance(turnLength, -turnLength);
+    moveDistance(turnLength, -turnLength, 100);
 }
 
 void Chassis::setVelocity(int leftVelo, int rightVelo){
