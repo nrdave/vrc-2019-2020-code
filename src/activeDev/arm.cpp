@@ -27,6 +27,6 @@ void Arm::driver(okapi::Controller controller) {
 void Arm::moveTo(double input){
         //Accounting for the arm gear ratio
         input *= 5;
-        armMotor.moveAbsolute(input, 100);
+        armMotor.moveAbsolute(input, 150);
     
 }
