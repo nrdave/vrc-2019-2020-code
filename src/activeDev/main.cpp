@@ -57,6 +57,7 @@ void autonomous() {
 	arm.moveTo(45);
 	pros::delay(500);
 	arm.moveTo(0);
+	pros::delay(500);
 	switch (autonID)
     {
     case AUTON_BLUEPZ:
@@ -68,16 +69,22 @@ void autonomous() {
     case AUTON_REDFRONT:
         break;    
     case AUTON_TEST:
-	chassis.moveDistance(5,5);
-	chassis.turnAngle(90);
+		intake.rollIn();
+		chassis.moveDistance(13, 13, 110);
+		chassis.turnAngle(165);
+		intake.stop();
+		chassis.moveDistance(16, 16, 100);
+		tray.trayDown();
+		pros::delay(2000);
+		intake.rollOut();
+		chassis.moveDistance(-10,-10, 50);
+		intake.stop();
+		tray.trayUp();
         break;     
 	case AUTON_SIMPLE:
-		chassis.setVelocity(100, 100);
+		chassis.moveDistance(10, 10, 100);
 		pros::delay(500);
-		chassis.setVelocity(-50,-50);
-		pros::delay(500);
-		chassis.setVelocity(0,0);
-
+		chassis.moveDistance(-10, -10, 100);
     case AUTON_NONE:
         break;
 	}
