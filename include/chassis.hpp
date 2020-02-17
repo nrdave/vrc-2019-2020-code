@@ -39,7 +39,7 @@ class Chassis {
         /**
         * The function to move a specific distance, in inches, in autonomous
         */ 
-        void moveDistance(float leftTarg, float rightTarg);
+        void moveDistance(float leftTarg, float rightTarg, int maxVelo);
         /**
          * The chassis function used to turn the robot a specific angle, in degrees
          * Positive values are clockwise, with negative ones being counterclockwise
