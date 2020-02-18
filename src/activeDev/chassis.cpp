@@ -50,9 +50,15 @@ void Chassis::moveDistance(float leftTarg, float rightTarg, int maxVelo){
         float leftOutput = leftError * 0.5;
         float rightOutput = rightError * 0.5;
         if(leftOutput > maxVelo)
-            leftOutput = maxVelo;        
+            if(leftOutput < 0)
+                leftOutput = -maxVelo;
+            else
+                leftOutput = maxVelo;
         if(rightOutput > maxVelo)
-            rightOutput = maxVelo;
+            if(rightOutput < 0)
+                rightOutput = -maxVelo;
+            else
+                rightOutput = maxVelo;        
         setVelocity(leftOutput, rightOutput);
         leftError = leftTarg - leftBase.getPosition(); 
         rightError = rightTarg - rightBase.getPosition(); 
