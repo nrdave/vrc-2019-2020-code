@@ -7,7 +7,7 @@
 #include "okapi/api.hpp"
 
 #define TRAY_MOTOR_PORT 10
-#define TRAY_MOTOR_ROTATION 1100
+#define TRAY_MOTOR_ROTATION 1875
 
 class Tray{
     private:

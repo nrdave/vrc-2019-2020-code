@@ -7,11 +7,11 @@
 
 #include "main.h"
 
-Tray::Tray(): trayMotor(TRAY_MOTOR_PORT, true, 
-    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees){
+Tray::Tray(): trayMotor(TRAY_MOTOR_PORT, false, 
+    okapi::AbstractMotor::gearset::red, okapi::AbstractMotor::encoderUnits::degrees){
     
-    okapi::Motor trayMotor(TRAY_MOTOR_PORT, true, 
-    okapi::AbstractMotor::gearset::green, okapi::AbstractMotor::encoderUnits::degrees);
+    okapi::Motor trayMotor(TRAY_MOTOR_PORT, false, 
+    okapi::AbstractMotor::gearset::red, okapi::AbstractMotor::encoderUnits::degrees);
     trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
     extended = false;
 };
@@ -20,20 +20,14 @@ void Tray::driver(okapi::Controller controller){
     if(controller.getDigital(okapi::ControllerDigital::Y)){
         trayMotor.moveAbsolute(0,100);
     }
-    if(controller.getDigital(okapi::ControllerDigital::A)){
-        if(extended == false)
-        {
-            trayDown();
-            extended = true;
-        }
-    }    
-    if(controller.getDigital(okapi::ControllerDigital::B)){
-        if(extended == true)
-        {
-            trayUp();
-            extended = false;
-        }
+    if(controller.getDigital(okapi::ControllerDigital::up)){
+        trayMotor.moveVelocity(100);
     }
+    else if(controller.getDigital(okapi::ControllerDigital::down)){
+        trayMotor.moveVelocity(-100);
+    }
+    else
+        trayMotor.moveVelocity(0);    
 }
 
 void Tray::trayDown(){
