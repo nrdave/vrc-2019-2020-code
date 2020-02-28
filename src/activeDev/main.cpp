@@ -54,18 +54,42 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	arm.moveTo(45);
-	pros::delay(750);
+	arm.moveTo(60);
+	pros::delay(1000);
 	arm.moveTo(0);
-	pros::delay(500);
+	pros::delay(750);
+	intake.rollIn();
 	switch (autonID)
     {
     case AUTON_BLUEPZ:
-        break;
+		chassis.moveDistance(6 , 6, 100);
+		pros::delay(250);
+		chassis.turnAngle(90);
+		chassis.moveDistance(6, 6, 100);
+		pros::delay(500);
+		intake.stop();
+		chassis.turnAngle(40);
+		chassis.moveDistance(3, 3, 50);
+		tray.trayDown();
+		pros::delay(4000);
+		tray.trayUp();
+		chassis.moveDistance(-4, -4, 50);        
+		break;
     case AUTON_REDPZ:
+		chassis.moveDistance(6 , 6, 100);
+		pros::delay(250);
+		chassis.turnAngle(-90);
+		chassis.moveDistance(6, 6, 100);
+		pros::delay(500);
+		intake.stop();
+		chassis.turnAngle(-40);
+		chassis.moveDistance(3, 3, 50);
+		tray.trayDown();
+		pros::delay(4000);
+		tray.trayUp();
+		chassis.moveDistance(-4, -4, 50);
         break;    
     case AUTON_BLUEFRONT:
-		intake.rollIn();
 		chassis.moveDistance(14, 14, 75);
 		chassis.turnAngle(-160);
 		intake.stop();
@@ -78,11 +102,10 @@ void autonomous() {
 		tray.trayUp();
         break;    
     case AUTON_REDFRONT:
-		intake.rollIn();
 		chassis.moveDistance(14, 14, 75);
 		chassis.turnAngle(160);
 		intake.stop();
-		chassis.moveDistance(15, 15, 100);
+		chassis.moveDistance(14, 14, 100);
 		tray.trayDown();
 		pros::delay(2000);
 		intake.rollOut();
@@ -91,20 +114,7 @@ void autonomous() {
 		tray.trayUp();
         break;    
     case AUTON_TEST:
-		intake.rollIn();
-		chassis.moveDistance(12 , 12, 100);
-		pros::delay(250);
-		chassis.turnAngle(-90);
-		chassis.moveDistance(12, 12, 100);
-		pros::delay(500);
-		intake.stop();
-		chassis.turnAngle(-45);
-		chassis.moveDistance(6, 6, 50);
-		tray.trayDown();
-		pros::delay(2000);
-		intake.rollOut();
-		chassis.moveDistance(-5, -5, 50);
-		tray.trayUp();
+
         break;     
 	case AUTON_SIMPLE:
 		chassis.moveDistance(10, 10, 100);
