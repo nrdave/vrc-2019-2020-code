@@ -67,12 +67,12 @@ void Chassis::moveDistance(float leftTarg, float rightTarg, int maxVelo){
     setVelocity(0,0);
 }
 
-void Chassis::turnAngle(float angle){
+void Chassis::turnAngle(float angle, float speed){
     double turnLength = 6.65/3 * angle * (3.1415926535/180);
-    moveDistance(turnLength, -turnLength, 100);
+    moveDistance(turnLength, -turnLength, speed);
 }
 
-void Chassis::setVelocity(int leftVelo, int rightVelo){
+void Chassis::setVelocity(float leftVelo, float rightVelo){
     leftBase.moveVelocity(leftVelo);
     rightBase.moveVelocity(rightVelo);
 }

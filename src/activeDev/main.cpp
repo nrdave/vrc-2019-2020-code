@@ -54,7 +54,7 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	arm.moveTo(60);
+	arm.moveTo(75);
 	pros::delay(1000);
 	arm.moveTo(0);
 	pros::delay(750);
@@ -64,34 +64,34 @@ void autonomous() {
     case AUTON_BLUEPZ:
 		chassis.moveDistance(6 , 6, 100);
 		pros::delay(250);
-		chassis.turnAngle(90);
+		chassis.turnAngle(90, 80);
 		chassis.moveDistance(6, 6, 100);
 		pros::delay(500);
 		intake.stop();
-		chassis.turnAngle(40);
+		chassis.turnAngle(50, 80);
 		chassis.moveDistance(3, 3, 50);
 		tray.trayDown();
 		pros::delay(4000);
 		tray.trayUp();
 		chassis.moveDistance(-4, -4, 50);        
 		break;
-    case AUTON_REDPZ:
+  case AUTON_REDPZ:
 		chassis.moveDistance(6 , 6, 100);
 		pros::delay(250);
-		chassis.turnAngle(-90);
+		chassis.turnAngle(-90,80);
 		chassis.moveDistance(6, 6, 100);
 		pros::delay(500);
 		intake.stop();
-		chassis.turnAngle(-40);
-		chassis.moveDistance(3, 3, 50);
+		chassis.turnAngle(-50, 80);
+		chassis.moveDistance(3.5, 3.5, 50);
 		tray.trayDown();
 		pros::delay(4000);
 		tray.trayUp();
 		chassis.moveDistance(-4, -4, 50);
-        break;    
+    break;    
     case AUTON_BLUEFRONT:
 		chassis.moveDistance(14, 14, 75);
-		chassis.turnAngle(-160);
+		chassis.turnAngle(-160, 80);
 		intake.stop();
 		chassis.moveDistance(14, 14, 100);
 		tray.trayDown();
@@ -103,7 +103,7 @@ void autonomous() {
         break;    
     case AUTON_REDFRONT:
 		chassis.moveDistance(14, 14, 75);
-		chassis.turnAngle(160);
+		chassis.turnAngle(160, 80);
 		intake.stop();
 		chassis.moveDistance(14, 14, 100);
 		tray.trayDown();

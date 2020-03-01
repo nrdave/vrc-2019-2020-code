@@ -44,8 +44,8 @@ class Chassis {
          * The chassis function used to turn the robot a specific angle, in degrees
          * Positive values are clockwise, with negative ones being counterclockwise
          */ 
-        void turnAngle(float angle);
-        void setVelocity(int leftVelo, int rightVelo);
+        void turnAngle(float angle, float speed);
+        void setVelocity(float leftVelo, float rightVelo);
 
         /**
          * -=-=-=-  NOT IMPLEMENTED YET -=-=-=-
